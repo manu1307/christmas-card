@@ -1,6 +1,13 @@
 const body = document.querySelector("body");
+const messageBtn = document.querySelector(".message_button");
+const message = document.querySelector(".message");
 
 const MIN_DURATION = 10;
+
+messageBtn.addEventListener("click", () => {
+	message.classList.remove("hidden");
+	messageBtn.classList.add("hidden");
+});
 
 const makeSnowFlake = () => {
 	const snowflake = document.createElement("div");
@@ -21,8 +28,8 @@ const makeSnowFlake = () => {
 	}, (duration + delay) * 1000);
 };
 
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 100; i++) {
 	setTimeout(() => {
 		makeSnowFlake();
-	}, 400 * i);
+	}, 500 * i);
 }
